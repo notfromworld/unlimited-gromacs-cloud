@@ -31,7 +31,7 @@ The workflow is designed to be simple, reproducible, and beginner-friendly, allo
 ### Included Analyses
 
 The workflow automatically performs commonly used trajectory analyses:
-
+- ✅ MMPBSA Calculations (MMPBSA)
 - ✅ Root Mean Square Deviation (RMSD)
 - ✅ Root Mean Square Fluctuation (RMSF)
 - ✅ Radius of Gyration (Rg)
