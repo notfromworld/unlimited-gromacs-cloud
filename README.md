@@ -1,4 +1,4 @@
-# Online-GROMACS-Analysis
+# Online-GROMACS-Cloud-Analysis
 
 > **Cloud-based automated analysis of GROMACS molecular dynamics trajectories. Generate publication-ready structural and conformational analyses from a single Jupyter notebook using free cloud computing resources.**
 
@@ -10,7 +10,7 @@
 
 ## Overview
 
-**Online-GROMACS-Analysis** is an open-source, notebook-based toolkit for automated post-processing and visualization of GROMACS molecular dynamics trajectories. The project is designed to simplify trajectory analysis by integrating commonly used structural, energetic, and conformational analyses into a single reproducible workflow.
+**Online-GROMACS-Cloud-Analysis** is an open-source, notebook-based toolkit for automated post-processing and visualization of GROMACS molecular dynamics trajectories. The project is designed to simplify trajectory analysis by integrating commonly used structural, energetic, and conformational analyses into a single reproducible workflow.
 
 The notebook is intended for researchers, students, and educators who require publication-ready analyses without relying on local high-performance computing (HPC) infrastructure. It is particularly suitable for execution on free cloud platforms such as Kaggle.
 
