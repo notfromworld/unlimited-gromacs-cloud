@@ -1,133 +1,214 @@
-# Unlimited-GROMACS-Cloud
+# Online-GROMACS-Analysis
 
-> **Run long (100 ns+) GROMACS molecular dynamics simulations on free cloud GPUs using automatic checkpointing and seamless session recovery.**
+> **Cloud-based automated analysis of GROMACS molecular dynamics trajectories. Generate publication-ready structural and conformational analyses from a single Jupyter notebook using free cloud computing resources.**
 
-A lightweight, single-script workflow that enables researchers to perform production-scale molecular dynamics simulations without requiring dedicated HPC infrastructure. Designed for students, researchers, and laboratories with limited computational resources.
+[![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)]()
+[![GROMACS](https://img.shields.io/badge/GROMACS-Compatible-green.svg)]()
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)]()
 
 ---
 
 ## Overview
 
-Running long molecular dynamics simulations often requires access to high-performance computing (HPC) clusters or expensive GPU hardware. **Unlimited-GROMACS-Cloud** provides a practical alternative by leveraging free cloud GPU platforms while automatically handling interrupted sessions through checkpoint-based continuation.
+**Online-GROMACS-Analysis** is an open-source, notebook-based toolkit for automated post-processing and visualization of GROMACS molecular dynamics trajectories. The project is designed to simplify trajectory analysis by integrating commonly used structural, energetic, and conformational analyses into a single reproducible workflow.
 
-The workflow is designed to be simple, reproducible, and beginner-friendly, allowing users to focus on their research rather than infrastructure management.
+The notebook is intended for researchers, students, and educators who require publication-ready analyses without relying on local high-performance computing (HPC) infrastructure. It is particularly suitable for execution on free cloud platforms such as Kaggle.
+
+Unlike molecular dynamics simulation workflows, this repository focuses **exclusively on trajectory analysis**. Users are expected to perform molecular dynamics simulations separately and provide the generated trajectories as input.
 
 ---
 
 ## Features
 
-### Molecular Dynamics Workflow
-
-- Run GROMACS entirely on free cloud GPU platforms
-- Automatic checkpoint creation and simulation continuation
-- Support for long production simulations (100 ns+)
-- Complete end-to-end protein molecular dynamics workflow
-- Optimized for limited cloud computing resources
-- Single-script execution
-- Beginner-friendly and reproducible
+* Automated trajectory analysis from a single notebook
+* Designed for GROMACS trajectory files
+* Runs on free cloud computing platforms
+* Publication-quality figures
+* Beginner-friendly workflow
+* Modular analysis pipeline
+* Reproducible and open-source
+* Suitable for molecular dynamics trajectories
 
 ---
 
-### Included Analyses
+## Included Analyses
 
-The workflow automatically performs commonly used trajectory analyses:
-- ✅ MMPBSA Calculations (MMPBSA)
-- ✅ Root Mean Square Deviation (RMSD)
-- ✅ Root Mean Square Fluctuation (RMSF)
-- ✅ Radius of Gyration (Rg)
-- ✅ Solvent Accessible Surface Area (SASA)
-- ✅ Hydrogen Bond Analysis
-- ✅ Principal Component Analysis (PC1–PC2)
-- ✅ 2D Free Energy Surface (FES)
-- ✅ 3D Free Energy Landscape (FEL)
-- ✅ Dynamic Cross-Correlation Matrix (DCCM)
-- ✅ DSSP Secondary Structure Assignment
-- ✅ Secondary Structure Heatmap
-- ✅ Secondary Structure Population Over Time
+### Structural Stability
+
+* ✅ Root Mean Square Deviation (RMSD)
+* ✅ Root Mean Square Fluctuation (RMSF)
+* ✅ Radius of Gyration (Rg)
+* ✅ Solvent Accessible Surface Area (SASA)
+* ✅ Hydrogen Bond Analysis
+
+---
+
+### Essential Dynamics
+
+* ✅ Principal Component Analysis (PCA)
+* ✅ PC1 vs PC2 Projection
+* ✅ Eigenvector Analysis
+
+---
+
+### Free Energy Analysis
+
+* ✅ Two-Dimensional Free Energy Surface (2D FES)
+* ✅ Three-Dimensional Free Energy Landscape (3D FEL)
+
+---
+
+### Correlation Analysis
+
+* ✅ Dynamic Cross-Correlation Matrix (DCCM)
+
+---
+
+### Secondary Structure Analysis
+
+* ✅ DSSP Secondary Structure Assignment
+* ✅ Secondary Structure Heatmap
+* ✅ Secondary Structure Population Over Time
+
+---
+
+### Binding Energy Analysis
+
+* ✅ MM/PBSA Binding Free Energy Analysis
 
 ---
 
 ## Workflow
 
-```
-Protein Structure
+```text
+GROMACS Simulation
         │
         ▼
-System Preparation
+Trajectory Files
+(.xtc, .tpr, .gro)
         │
         ▼
-Energy Minimization
+Online-GROMACS-Analysis
+        │
+        ├── RMSD
+        ├── RMSF
+        ├── Radius of Gyration
+        ├── SASA
+        ├── Hydrogen Bonds
+        ├── PCA
+        ├── 2D FES
+        ├── 3D FEL
+        ├── DCCM
+        ├── DSSP
+        ├── Secondary Structure Analysis
+        └── MM/PBSA
         │
         ▼
-NVT Equilibration
-        │
-        ▼
-NPT Equilibration
-        │
-        ▼
-Production Molecular Dynamics
-        │
-        ▼
-Automatic Checkpoint Recovery
-        │
-        ▼
-Trajectory Analysis
-        │
-        ▼
-Publication-Ready Figures
+Publication-Ready Figures & Results
 ```
 
 ---
 
-## Repository Contents
+## Repository Structure
 
+```text
+Online-GROMACS-Analysis/
+│
+├── Online_GROMACS_Analysis.ipynb
+├── README.md
+├── LICENSE
+├── CITATION.cff
+└── requirements.txt
 ```
-.
-├── Unlimited_GROMACS_Cloud.ipynb
-└── README.md
-```
-
-The notebook contains the complete workflow for running protein-only molecular dynamics simulations and performing automated trajectory analysis.
 
 ---
 
-## Intended Users
+## Input
 
-This project is suitable for:
+The notebook accepts standard GROMACS output files, including:
 
-- Computational biologists
-- Structural biologists
-- Bioinformaticians
-- Molecular dynamics researchers
-- Students learning GROMACS
-- Researchers without dedicated HPC access
-- Laboratories with limited computational resources
+* `.xtc`
+* `.trr`
+* `.tpr`
+* `.gro`
+* `.pdb`
+* MM/PBSA output files (where applicable)
+
+---
+
+## Output
+
+The workflow automatically generates:
+
+* Publication-quality figures
+* Statistical summaries
+* Structural analysis plots
+* Free energy landscapes
+* Secondary structure visualizations
+* Correlation matrices
+* MM/PBSA summaries
 
 ---
 
 ## Requirements
 
-- Python
-- GROMACS
-- Free cloud GPU platform (e.g., Kaggle)
-- Basic familiarity with molecular dynamics simulations
+* Python 3.10+
+* GROMACS
+* Jupyter Notebook
+* MDAnalysis
+* MDTraj
+* NumPy
+* Pandas
+* Matplotlib
+* SciPy
+* DSSP
+* gmx_MMPBSA (for MM/PBSA analysis)
+
+---
+
+## Intended Audience
+
+This repository is intended for:
+
+* Computational Biologists
+* Structural Biologists
+* Bioinformaticians
+* Molecular Dynamics Researchers
+* Graduate Students
+* Undergraduate Researchers
+* Educators
+* Laboratories with limited computational resources
 
 ---
 
 ## Citation
 
-If this repository contributes to your research, please consider citing it in your publications and acknowledging the project.
+If this repository contributes to your research, please cite the archived Zenodo release.
+
+A `CITATION.cff` file is included in this repository, allowing GitHub to automatically generate citation information through the **"Cite this repository"** feature.
+
+If a research article accompanies this software, please cite both the software and the associated publication.
+
+---
+
+## Contributing
+
+Contributions that improve the workflow, add new analyses, enhance documentation, or fix bugs are welcome. Please open an issue to discuss substantial changes before submitting a pull request.
 
 ---
 
 ## License
 
-This project is released under the appropriate open-source license included in this repository.
+This project is released under the MIT License.
 
 ---
 
 ## Disclaimer
 
-This project is intended for research and educational purposes.
+This software is intended for research and educational purposes. Users are responsible for validating results generated by the workflow before publication.
 
-"Unlimited" refers to the practical ability to perform long simulations through automatic checkpointing and continuation across multiple cloud sessions. Actual compute availability is subject to the policies and limits of the cloud platform being used.
+---
+
+## Acknowledgements
+
+This project makes use of established open-source scientific software including GROMACS and related molecular dynamics analysis libraries. The authors gratefully acknowledge the developers and maintainers of these tools and the broader computational biology open-source community.
