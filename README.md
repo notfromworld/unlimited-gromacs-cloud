@@ -1,111 +1,53 @@
-# Online-GROMACS-Cloud-Analysis
+# Unlimited-GROMACS-Cloud-Analysis
 
-> **Cloud-based automated analysis of GROMACS molecular dynamics trajectories. Generate publication-ready structural and conformational analyses from a single Jupyter notebook using free cloud computing resources.**
+> **A cloud-based Jupyter notebook for step-by-step analysis of GROMACS molecular dynamics trajectories.**
 
-[![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)]()
-[![GROMACS](https://img.shields.io/badge/GROMACS-Compatible-green.svg)]()
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg)]()
+**Online-GROMACS-Analysis** is an open-source Jupyter notebook designed to perform comprehensive post-simulation analysis of GROMACS molecular dynamics trajectories using free cloud computing platforms such as Kaggle. The notebook provides a structured, cell-by-cell workflow that guides users through commonly used trajectory analyses and generates publication-ready figures for protein molecular dynamics studies.
+
+Unlike automated pipelines, each analysis step is presented individually, allowing users to understand, modify, and execute every stage of the workflow according to their research requirements.
 
 ---
 
 ## Overview
 
-**Online-GROMACS-Cloud-Analysis** is an open-source, notebook-based toolkit for automated post-processing and visualization of GROMACS molecular dynamics trajectories. The project is designed to simplify trajectory analysis by integrating commonly used structural, energetic, and conformational analyses into a single reproducible workflow.
+Trajectory analysis is an essential component of molecular dynamics simulations, providing insights into structural stability, flexibility, conformational changes, correlated motions, and energetic landscapes. However, setting up analysis scripts can be repetitive and time-consuming, particularly for new users.
 
-The notebook is intended for researchers, students, and educators who require publication-ready analyses without relying on local high-performance computing (HPC) infrastructure. It is particularly suitable for execution on free cloud platforms such as Kaggle.
+This repository consolidates commonly used GROMACS trajectory analyses into a single notebook with clearly organized sections. Each analysis can be executed independently, making the notebook suitable for both educational purposes and research projects.
 
-Unlike molecular dynamics simulation workflows, this repository focuses **exclusively on trajectory analysis**. Users are expected to perform molecular dynamics simulations separately and provide the generated trajectories as input.
+The notebook is intended for **post-processing only**. Molecular dynamics simulations should be completed prior to using this repository.
 
 ---
 
 ## Features
 
-* Automated trajectory analysis from a single notebook
-* Designed for GROMACS trajectory files
-* Runs on free cloud computing platforms
-* Publication-quality figures
-* Beginner-friendly workflow
-* Modular analysis pipeline
-* Reproducible and open-source
-* Suitable for molecular dynamics trajectories
+* Step-by-step Jupyter notebook workflow
+* Runs on free cloud computing platforms (e.g., Kaggle)
+* No local GPU required for notebook execution
+* Individual analysis sections that can be run independently
+* Publication-ready figures
+* Beginner-friendly organization
+* Easily customizable for different systems
+* Suitable for protein molecular dynamics trajectories
 
 ---
 
 ## Included Analyses
 
-### Structural Stability
+The notebook includes the following analyses:
 
-* ✅ Root Mean Square Deviation (RMSD)
-* ✅ Root Mean Square Fluctuation (RMSF)
-* ✅ Radius of Gyration (Rg)
-* ✅ Solvent Accessible Surface Area (SASA)
-* ✅ Hydrogen Bond Analysis
-
----
-
-### Essential Dynamics
-
-* ✅ Principal Component Analysis (PCA)
-* ✅ PC1 vs PC2 Projection
-* ✅ Eigenvector Analysis
-
----
-
-### Free Energy Analysis
-
-* ✅ Two-Dimensional Free Energy Surface (2D FES)
-* ✅ Three-Dimensional Free Energy Landscape (3D FEL)
-
----
-
-### Correlation Analysis
-
-* ✅ Dynamic Cross-Correlation Matrix (DCCM)
-
----
-
-### Secondary Structure Analysis
-
-* ✅ DSSP Secondary Structure Assignment
-* ✅ Secondary Structure Heatmap
-* ✅ Secondary Structure Population Over Time
-
----
-
-### Binding Energy Analysis
-
-* ✅ MM/PBSA Binding Free Energy Analysis
-
----
-
-## Workflow
-
-```text
-GROMACS Simulation
-        │
-        ▼
-Trajectory Files
-(.xtc, .tpr, .gro)
-        │
-        ▼
-Online-GROMACS-Analysis
-        │
-        ├── RMSD
-        ├── RMSF
-        ├── Radius of Gyration
-        ├── SASA
-        ├── Hydrogen Bonds
-        ├── PCA
-        ├── 2D FES
-        ├── 3D FEL
-        ├── DCCM
-        ├── DSSP
-        ├── Secondary Structure Analysis
-        └── MM/PBSA
-        │
-        ▼
-Publication-Ready Figures & Results
-```
+* Root Mean Square Deviation (RMSD)
+* Root Mean Square Fluctuation (RMSF)
+* Radius of Gyration (Rg)
+* Solvent Accessible Surface Area (SASA)
+* Hydrogen Bond Analysis
+* MM/PBSA Binding Free Energy Analysis
+* Principal Component Analysis (PC1–PC2)
+* Two-Dimensional Free Energy Surface (2D FES)
+* Three-Dimensional Free Energy Landscape (3D FEL)
+* Dynamic Cross-Correlation Matrix (DCCM)
+* DSSP Secondary Structure Assignment
+* Secondary Structure Heatmap
+* Secondary Structure Population Over Time
 
 ---
 
@@ -123,92 +65,103 @@ Online-GROMACS-Analysis/
 
 ---
 
-## Input
+## Getting Started
 
-The notebook accepts standard GROMACS output files, including:
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/<your-username>/Online-GROMACS-Analysis.git
+```
+
+### 2. Open the notebook
+
+Launch Jupyter Notebook or upload the notebook to Kaggle.
+
+### 3. Prepare your simulation outputs
+
+The notebook expects trajectories and topology files generated from completed GROMACS simulations.
+
+Typical input files include:
 
 * `.xtc`
-* `.trr`
 * `.tpr`
 * `.gro`
-* `.pdb`
-* MM/PBSA output files (where applicable)
+* `.top`
+* `.edr`
+* index files (`.ndx`) where applicable
+
+### 4. Execute analyses
+
+Run each notebook cell sequentially. Every section contains the commands necessary for a specific analysis and can be modified to suit individual projects.
 
 ---
 
-## Output
+## Software Requirements
 
-The workflow automatically generates:
-
-* Publication-quality figures
-* Statistical summaries
-* Structural analysis plots
-* Free energy landscapes
-* Secondary structure visualizations
-* Correlation matrices
-* MM/PBSA summaries
-
----
-
-## Requirements
-
-* Python 3.10+
+* Python 3.x
 * GROMACS
 * Jupyter Notebook
-* MDAnalysis
-* MDTraj
 * NumPy
 * Pandas
 * Matplotlib
-* SciPy
+* MDTraj (where applicable)
 * DSSP
-* gmx_MMPBSA (for MM/PBSA analysis)
+* gmx_MMPBSA (for MM/PBSA calculations)
+
+Additional dependencies are listed in `requirements.txt`.
 
 ---
 
-## Intended Audience
+## Intended Users
 
 This repository is intended for:
 
-* Computational Biologists
-* Structural Biologists
+* Molecular dynamics researchers
+* Computational biologists
+* Structural biologists
 * Bioinformaticians
-* Molecular Dynamics Researchers
-* Graduate Students
-* Undergraduate Researchers
-* Educators
-* Laboratories with limited computational resources
+* Students learning GROMACS analysis
+* Researchers without access to dedicated HPC resources
+
+---
+
+## Limitations
+
+* This repository does **not** perform molecular dynamics simulations.
+* Users are expected to have completed their simulations before using the notebook.
+* Input trajectories should be generated using GROMACS.
+* Individual analyses may require additional software such as DSSP or gmx_MMPBSA.
 
 ---
 
 ## Citation
 
-If this repository contributes to your research, please cite the archived Zenodo release.
+If this notebook contributes to your research, please cite the archived Zenodo release.
 
-A `CITATION.cff` file is included in this repository, allowing GitHub to automatically generate citation information through the **"Cite this repository"** feature.
+After publication on Zenodo, the citation information will be available through both the DOI and GitHub's **"Cite this repository"** feature.
 
-If a research article accompanies this software, please cite both the software and the associated publication.
+Example BibTeX:
 
----
-
-## Contributing
-
-Contributions that improve the workflow, add new analyses, enhance documentation, or fix bugs are welcome. Please open an issue to discuss substantial changes before submitting a pull request.
+```bibtex
+@software{ray2026onlinegromacsanalysis,
+  author    = {Soumyadeep Ray},
+  title     = {Online GROMACS Analysis},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.xxxxxxx}
+}
+```
 
 ---
 
 ## License
 
-This project is released under the MIT License.
-
----
-
-## Disclaimer
-
-This software is intended for research and educational purposes. Users are responsible for validating results generated by the workflow before publication.
+This project is distributed under the license included in this repository.
 
 ---
 
 ## Acknowledgements
 
-This project makes use of established open-source scientific software including GROMACS and related molecular dynamics analysis libraries. The authors gratefully acknowledge the developers and maintainers of these tools and the broader computational biology open-source community.
+This notebook was developed to simplify post-simulation molecular dynamics analysis for the broader research community by consolidating commonly used GROMACS analyses into a single, organized workflow.
+
+Contributions, suggestions, and improvements are welcome through GitHub Issues and Pull Requests.
