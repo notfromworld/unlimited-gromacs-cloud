@@ -2,7 +2,7 @@
 
 > **A cloud-based Jupyter notebook for step-by-step analysis of GROMACS molecular dynamics trajectories.**
 
-**Online-GROMACS-Analysis** is an open-source Jupyter notebook designed to perform comprehensive post-simulation analysis of GROMACS molecular dynamics trajectories using free cloud computing platforms such as Kaggle. The notebook provides a structured, cell-by-cell workflow that guides users through commonly used trajectory analyses and generates publication-ready figures for protein molecular dynamics studies.
+**Unlimited-GROMACS-Cloud-Analysis** is an open-source Jupyter notebook designed to perform comprehensive post-simulation analysis of GROMACS molecular dynamics trajectories using free cloud computing platforms such as Kaggle. The notebook provides a structured, cell-by-cell workflow that guides users through commonly used trajectory analyses and generates publication-ready figures for protein molecular dynamics studies.
 
 Unlike automated pipelines, each analysis step is presented individually, allowing users to understand, modify, and execute every stage of the workflow according to their research requirements.
 
@@ -70,7 +70,7 @@ Online-GROMACS-Analysis/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/<your-username>/Online-GROMACS-Analysis.git
+git clone https://github.com/notfromworld/unlimited-gromacs-cloud-analysis.git
 ```
 
 ### 2. Open the notebook
@@ -148,7 +148,7 @@ Example BibTeX:
   title     = {Online GROMACS Analysis},
   year      = {2026},
   publisher = {Zenodo},
-  doi       = {10.5281/zenodo.xxxxxxx}
+  doi       = {10.5281/zenodo.21155931}
 }
 ```
 
