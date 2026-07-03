@@ -140,18 +140,26 @@ If this notebook contributes to your research, please cite the archived Zenodo r
 
 After publication on Zenodo, the citation information will be available through both the DOI and GitHub's **"Cite this repository"** feature.
 
-Example BibTeX:
+## Citation
+
+If this notebook contributes to your research, please cite the Zenodo archive.
+
+**APA-style citation**
+
+Ray, S. (2026). *Unlimited-GROMACS-Cloud-Analysis: A Cloud-Based Notebook for Step-by-Step Analysis of GROMACS Molecular Dynamics Trajectories*. Zenodo. https://doi.org/10.5281/zenodo.21155931
+
+**BibTeX**
 
 ```bibtex
-@software{ray2026onlinegromacsanalysis,
+@software{ray2026unlimitedgromacscloudanalysis,
   author    = {Soumyadeep Ray},
-  title     = {Online GROMACS Analysis},
+  title     = {Unlimited-GROMACS-Cloud-Analysis: A Cloud-Based Notebook for Step-by-Step Analysis of GROMACS Molecular Dynamics Trajectories},
   year      = {2026},
   publisher = {Zenodo},
-  doi       = {10.5281/zenodo.21155931}
+  doi       = {10.5281/zenodo.21155931},
+  url       = {https://doi.org/10.5281/zenodo.21155931}
 }
 ```
-
 ---
 
 ## License
